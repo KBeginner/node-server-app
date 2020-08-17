@@ -1,0 +1,19 @@
+{
+  "name": "node-server-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KBeginner/node-server-app.git"
+  },
+  "author": "wiill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KBeginner/node-server-app/issues"
+  },
+  "homepage": "https://github.com/KBeginner/node-server-app#readme"
+}

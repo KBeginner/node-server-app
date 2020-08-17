@@ -1,9 +1,9 @@
 ## node-server-app
 
-# 安装依赖
+## 安装依赖
 
 > npm install
 
-# 启动项目
+## 启动项目
 
 > npm start

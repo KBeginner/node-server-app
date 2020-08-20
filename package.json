@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "hotnode index.js",        
+    "start": "hotnode index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/KBeginner/node-server-app#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "hotnode": "0.0.8"
+    "express-session": "^1.17.1",
+    "hotnode": "0.0.8",
+    "mysql": "^2.18.1"
   }
 }

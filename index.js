@@ -19,13 +19,7 @@ app.use(cors({
 }))
 
 /* 引入路由（接口） */
-
-// 全局拦截
-app.use('*', require('./routes/all'))
-// 注册账号
-app.use('/user/register', require('./routes/user/register'))
-// 获取用户
-app.use('/user/getUser', require('./routes/user/getUser'))
+app.use('/', require('./routes/index'))
 
 
 

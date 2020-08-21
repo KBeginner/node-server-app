@@ -19,6 +19,12 @@ const res = (code, data)=>{
             msg: 'Bad Request',
             data
         },
+        403: {
+            code: code,
+            status: 0,
+            msg: 'Forbidden',
+            data
+        },
         404: {
             code: code,
             status: 0,

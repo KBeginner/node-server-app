@@ -1,6 +1,7 @@
 const {router, database, response} = require('../../utils/Middleware')
 
 router.post('/', (req, res)=>{
+    console.log('register')
     if (!req.body.account) {
         res.json(response(400, 'account不能为空'))
         return

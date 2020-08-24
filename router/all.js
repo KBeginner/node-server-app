@@ -1,7 +1,4 @@
-const express = require('express')
-const router = express.Router()
-const session = require('express-session')
-const response= require('../utils/httpRes')
+const {router, session, response} = require('../utils/Middleware')
 
 // 配置session
 router.use(session({
@@ -17,17 +14,18 @@ router.use(session({
 
 router.all('*', (req, res, next)=>{
     // 访问登录和注册接口不需要校验
-    if (req.baseUrl=='/user/login' || res.baseUrl=='/user/register') {
-        next()
-    } 
-    // 检验登录状态
-    else {
-        if (!req.session.username) {
-            res.json(response(403, '无权限访问'))
-        } else {
-            next()
-        }
-    }
+    // if (req.baseUrl=='/user/login' || res.baseUrl=='/user/register') {
+    //     next()
+    // } 
+    // // 检验登录状态
+    // else {
+    //     if (!req.session.username) {
+    //         res.json(response(403, '无权限访问'))
+    //     } else {
+    //         next()
+    //     }
+    // }
+    next()
 })
 
 module.exports = router

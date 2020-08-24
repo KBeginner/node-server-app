@@ -15,4 +15,7 @@ router.use('/', require('./user/logout'))
 // 获取用户
 router.use('/', require('./user/getUser'))
 
+// 上传图片
+router.use('/', require('./note/addNote'))
+
 module.exports = router

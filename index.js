@@ -19,7 +19,7 @@ app.use(cors({
 }))
 
 /* 引入路由（接口） */
-app.use('/', require('./routes/index'))
+app.use('/', require('./router/index'))
 
 
 

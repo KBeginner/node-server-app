@@ -16,20 +16,18 @@ router.use(session({
 }))
 
 router.all('*', (req, res, next)=>{
-    console.log(req.session.username, 'session')
-    // 访问登录接口不需要校验
-    // if (req.baseUrl=='/user/login') {
-    //     next()
-    // } 
-    // // 检验登录状态
-    // else {
-    //     if (!req.session.username) {
-    //         res.json(response(403, '无权限访问'))
-    //         return
-    //     }
-    //     next()
-    // }
-    next()
+    // 访问登录和注册接口不需要校验
+    if (req.baseUrl=='/user/login' || res.baseUrl=='/user/register') {
+        next()
+    } 
+    // 检验登录状态
+    else {
+        if (!req.session.username) {
+            res.json(response(403, '无权限访问'))
+        } else {
+            next()
+        }
+    }
 })
 
 module.exports = router

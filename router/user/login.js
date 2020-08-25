@@ -1,7 +1,6 @@
 const {router, database, response} = require('../../utils/Middleware')
 
 router.get('/user/login', (req, res)=>{
-    console.log('login')
     if (!req.query.account) {
         res.json(response(400, 'account不能为空'))
         return

@@ -1,7 +1,6 @@
 const {router, database, response} = require('../../utils/Middleware')
 
 router.get('/user/getUser', (req, res)=>{
-    console.log('getUser')
     if (!req.query.id) {
         res.json(response(400, 'id不能为空'))
         return

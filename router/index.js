@@ -16,6 +16,21 @@ router.use('/', require('./user/logout'))
 router.use('/', require('./user/getUser'))
 
 // 上传图片
+router.use('/', require('./test/upload'))
+
+// 下载图片
+router.use('/', require('./test/download'))
+
+// 删除图片
+router.use('/', require('./test/delete'))
+
+// 新增笔记
 router.use('/', require('./note/addNote'))
+
+// 删除笔记
+router.use('/', require('./note/deleteNote'))
+
+// 查询笔记
+router.use('/', require('./note/getNote'))
 
 module.exports = router

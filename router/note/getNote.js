@@ -9,6 +9,7 @@ router.get('/note/getNote', (req, res)=>{
     database.query(`select * from notes where id='${req.query.id}'`, (noteErr, noteData)=>{
         if (noteErr) {
             res.json(response(500, noteErr))
+            return
         } else {
             database.query(`select * from files where noteId='${req.query.id}'`, (fileErr, fileData)=>{
                 if (fileErr) {

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80021
 File Encoding         : 65001
 
-Date: 2020-08-24 09:19:40
+Date: 2020-08-27 09:07:49
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,15 +32,31 @@ CREATE TABLE `comment` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for `files`
+-- ----------------------------
+DROP TABLE IF EXISTS `files`;
+CREATE TABLE `files` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `noteId` int NOT NULL,
+  `path` varchar(200) NOT NULL,
+  `fileName` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ----------------------------
+-- Records of files
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `notes`
 -- ----------------------------
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE `notes` (
-  `noteId` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `userId` int NOT NULL,
   `title` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `content` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  PRIMARY KEY (`noteId`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
@@ -57,7 +73,7 @@ CREATE TABLE `users` (
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id`,`account`),
   UNIQUE KEY `account` (`account`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- ----------------------------
 -- Records of users

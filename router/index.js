@@ -30,7 +30,10 @@ router.use('/', require('./note/addNote'))
 // 删除笔记
 router.use('/', require('./note/deleteNote'))
 
-// 查询笔记
+// 查询(单条)笔记
 router.use('/', require('./note/getNote'))
+
+// 查询(我的)笔记
+router.use('/', require('./note/myNote'))
 
 module.exports = router

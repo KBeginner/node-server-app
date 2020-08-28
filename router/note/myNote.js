@@ -1,11 +1,11 @@
 const {router, database, response, path} = require('../../utils/Middleware')
 
-router.get('/note/getNote', (req, res)=>{
+router.get('/note/myNote', (req, res)=>{
     if (!req.query.userId) {
         res.json(response(400, 'userId不能为空'))
         return
     }
-    database.query(`select * from notes where userId='${req.query.userId}'`, (noteErr, noteData)=>{
+    database.query(`select * from notes where userId='${req.query.userId}' order by createTime DESC`, (noteErr, noteData)=>{
         if (noteErr) {
             res.json(response(500, noteErr))
             return

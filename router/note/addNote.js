@@ -1,4 +1,4 @@
-const {router, database, response, multer} = require('../../utils/Middleware')
+const {router, database, response, multer, moment} = require('../../utils/Middleware')
 
 let uploads = multer({dest:'uploads/'})
 
@@ -16,7 +16,8 @@ router.post('/note/addNote', uploads.array('files', 5),  (req, res)=>{
         res.json(response(400, 'files不能为空'))
         return
     }
-    let sql = `insert into notes (userId, title, content) values ('${params.userId}', '${params.title}', '${params.content}')`
+    let createTime = moment().format('YYYY-MM-DD HH:mm:ss')
+    let sql = `insert into notes (userId, title, content, createTime) values ('${params.userId}', '${params.title}', '${params.content}', '${createTime}')`
     database.query(sql, (err, data)=>{
         if (err) {
             res.json(response(500, err))   
